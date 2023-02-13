@@ -103,7 +103,7 @@ if (lengthPrompt > 128 || lengthPrompt < 8) {
 }
 
 var lowLetterPrompt = confirm(
-  "Would you like your password to include lowercase letters?"
+  "Would you like your password to include lowercase letters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
 if (lowLetterPrompt === true) {
   alert("You have chosen to inlcude lowercase letters.");
@@ -112,7 +112,7 @@ if (lowLetterPrompt === true) {
 }
 
 var upLetterPrompt = confirm(
-  "Would you like your password to include uppercase letters?"
+  "Would you like your password to include uppercase letters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
 if (lowLetterPrompt === true) {
   alert("You have chosen to inlcude uppercase letters.");
@@ -120,7 +120,9 @@ if (lowLetterPrompt === true) {
   alert("You have chosen not to inlcude uppercase letters.");
 }
 
-var numberPrompt = confirm("Would you like your password to include numbers?");
+var numberPrompt = confirm(
+  "Would you like your password to include numbers? Hit 'okay' to include; hit 'cancel' to exclude."
+);
 if (lowLetterPrompt === true) {
   alert("You have chosen to inlcude numbers.");
 } else {
@@ -128,7 +130,7 @@ if (lowLetterPrompt === true) {
 }
 
 var specCharPrompt = confirm(
-  "Would you like your password to include special characters?"
+  "Would you like your password to include special characters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
 if (lowLetterPrompt === true) {
   alert("You have chosen to inlcude special characters.");
