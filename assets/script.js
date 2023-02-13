@@ -85,22 +85,29 @@ var number = Array.from(numberRange);
 var character = Array.from(specialChars);
 // console.log(character); turns specialChars const into a string
 
+alert(
+  "¡Bienvenidos! I'm here to generate a password for you; you'll be asked a series of questions, and then my robo-brain will spin some wheels to get you a solid password. Let's get started!"
+);
+
 var lengthPrompt = prompt(
   "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals)."
 );
-// var lengthConf = "You have selected " +
 
-if (lengthPrompt > 128 || lengthPrompt < 8) {
+// NEED A FUNCTION TO RETURN TO lengthPrompt
+while (lengthPrompt > 128 || lengthPrompt < 8) {
   alert(
     "Oops! " +
       lengthPrompt +
       " character(s) is not within the specified range; please select a number from 8-128 for your password character-length."
   );
-} else {
-  alert(
-    "You have chosen " + lengthPrompt + " characters for your password length."
+  lengthPrompt = prompt(
+    "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals."
   );
 }
+
+alert(
+  "You have chosen " + lengthPrompt + " characters for your password length."
+);
 
 var lowLetterPrompt = confirm(
   "Would you like your password to include lowercase letters? Hit 'okay' to include; hit 'cancel' to exclude."
@@ -108,34 +115,43 @@ var lowLetterPrompt = confirm(
 if (lowLetterPrompt === true) {
   alert("You have chosen to inlcude lowercase letters.");
 } else {
-  alert("You have chosen not to inlcude lowercase letters.");
+  alert("You have chosen to exclude lowercase letters.");
 }
 
 var upLetterPrompt = confirm(
   "Would you like your password to include uppercase letters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
-if (lowLetterPrompt === true) {
+if (upLetterPrompt === true) {
   alert("You have chosen to inlcude uppercase letters.");
 } else {
-  alert("You have chosen not to inlcude uppercase letters.");
+  alert("You have chosen to exclude uppercase letters.");
 }
 
 var numberPrompt = confirm(
   "Would you like your password to include numbers? Hit 'okay' to include; hit 'cancel' to exclude."
 );
-if (lowLetterPrompt === true) {
+if (numberPrompt === true) {
   alert("You have chosen to inlcude numbers.");
 } else {
-  alert("You have chosen not to inlcude numbers.");
+  alert("You have chosen to exclude numbers.");
 }
 
 var specCharPrompt = confirm(
   "Would you like your password to include special characters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
-if (lowLetterPrompt === true) {
+if (specCharPrompt === true) {
   alert("You have chosen to inlcude special characters.");
 } else {
-  alert("You have chosen not to inlcude special characters.");
+  alert("You have chosen to exclude special characters.");
 }
+
+// MAY NOT NEED, BUT CREATED VAR/ARRAY TO CONSOLIDATE THE STORED VALUES FOR SELECTIONS
+// var selections = [
+//   lengthPrompt,
+//   lowLetterPrompt,
+//   upLetterPrompt,
+//   numberPrompt,
+//   specCharPrompt,
+// ];
 
 // slice(Math.floor(Math.random)) *
