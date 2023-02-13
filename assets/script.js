@@ -160,23 +160,25 @@ var passwordUpper = [Math.floor(Math.random() * uppercase.length)];
 var passwordNumber = [Math.floor(Math.random() * number.length)];
 var passwordSpecChar = [Math.floor(Math.random() * character.length)];
 // turns randomized character selecitons into an array
-var randomChar = [
-  passwordLower,
-  passwordUpper,
-  passwordNumber,
-  passwordSpecChar,
-];
+var randomChar = [lowercase, uppercase, number, character];
 
 //
 //
 //
+
+console.log(randomChar);
+
+var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  for (i = 0; (i = lengthPrompt.length); i++);
+  for (i = 0; i < lengthPrompt.length; i++);
   {
     return randomChar[i];
   }
 }
+console.log(randomChar);
+
+generatePassword();
 
 function writePassword() {
   var password = generatePassword();
@@ -184,6 +186,6 @@ function writePassword() {
   passwordText.value = password;
 }
 
-var generateBtn = document.querySelector("#generate");
+// writePassword();
 
 generateBtn.addEventListener("click", writePassword);
