@@ -154,4 +154,31 @@ if (specCharPrompt === true) {
 //   specCharPrompt,
 // ];
 
-// slice(Math.floor(Math.random)) *
+// randomizes characters selected by the generator
+var passwordLower = [Math.floor(Math.random() * lowercase.length)];
+var passwordUpper = [Math.floor(Math.random() * uppercase.length)];
+var passwordNumber = [Math.floor(Math.random() * number.length)];
+var passwordSpecChar = [Math.floor(Math.random() * character.length)];
+// turns randomized character selecitons into an array
+var randomChar = Array.from(
+  passwordLower,
+  passwordUpper,
+  passwordNumber,
+  passwordSpecChar
+);
+
+//
+//
+//
+
+var generateBtn = document.querySelector("#generate");
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// // Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
