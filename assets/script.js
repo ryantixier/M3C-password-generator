@@ -90,16 +90,21 @@ var lengthPrompt = prompt(
 );
 // var lengthConf = "You have selected " +
 
-if (lengthPrompt > 128 || lengthPrompt < 8) {
-  this.alert(
-    "Oops! " +
-      lengthPrompt +
-      " characters is not within the specified range; please select a number from 8-128 for your password character-length."
-  );
-} else {
-  alert(
-    "You have chosen " + lengthPrompt + " characters for your password length."
-  );
+function showConfirm() {
+  if (lengthPrompt > 128 || lengthPrompt < 8) {
+    this.alert(
+      "Oops! " +
+        lengthPrompt +
+        " character(s) is not within the specified range; please select a number from 8-128 for your password character-length."
+    );
+    document.return(lengthPrompt);
+  } else {
+    alert(
+      "You have chosen " +
+        lengthPrompt +
+        " characters for your password length."
+    );
+  }
 }
 
 var lowLetterPrompt = confirm(
