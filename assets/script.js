@@ -39,8 +39,8 @@
 // generate pw & display to complete
 
 // NOTES:
-//// create variables first...
-///// 4 yes/no inputs; 1 string input
+//// create variables/keys (constants) first...
+///// 4 true/false inputs; 1 string input
 //// how should I structure my <for> loop?
 //// look up how to generate/put together strings of responses
 //// çreate variables
@@ -81,17 +81,24 @@ var number = Array.from(numberRange);
 var character = Array.from(specialChars);
 // console.log(character); turns specialChars const into a string
 
-//
+var passwordPrompt = prompt(
+  "How many characters would you like in your password? (Choose a number between 8-128)."
+);
+var lowLetterPrompt =
+  "Would you like your password to include lowercase letters?";
+var upLetterPrompt =
+  "Would you like your password to include uppercase letters?";
+var numberPrompt = "Would you like your password to include numbers?";
+var specCharPrompt =
+  "Would you like your password to include special characters?";
 
-// var passwordLength = ;
-// var lowercase = letters;
-// var passwordLength =
-// var lengthChoice =
+// var lengthConf = "You have selected " +
+
+if (passwordPrompt > 128 || passwordPrompt < 8) {
+  alert(
+    "Oops! That number is not accepted; please select a number from 8-128 for your password character-length."
+  );
+} else {
+}
 
 // slice(Math.floor(Math.random)) *
-
-// if (lengthChoice >= 128 || letters <= 8) {
-//   this.alert(
-//     "Please select a number from 8-128 for your password character length."
-//   );
-// }
