@@ -16,27 +16,60 @@ generateBtn.addEventListener("click", writePassword);
 
 // PSEUDOCODE
 
-//// PROCESS - VISIT URL... 5 SEQUENTIAL PROMPTS:
-//////1.*  8-128 characters (<if> loop; >= 8 && <= 128) >>> sting input (NOT ===)
-//////2.*  lowercase?    \
-//////3.*  uppercase?    | >>> yes/no prompts
-//////4.*  numbers?      | >>> (maybe use radio button?)
-//////5.*  symbols?      /
-//// * confirm selection after each prompt is answered!!
-////// "You have selected _([yes/no])_; would you like to keep this selection?"
-//// (<if> === [confirm]), continue to next prompt/loop - if @ end, generate pw
-////// <else> restart previous loop - if @ end, restart from character select (1st loop)
-//// * final confirmation: list/summarize selections to previous prompts
-////// You have selected _(<ul> displaying selections)_; are you happy with your criteria?"
-//// (<if> === [confirm]) {gereate/display password}
-////// <else> {restart from character quantity selection (1st loop)}
-// when all is complete - generate pw & display
+//// PROCESS - VISIT URL... SEQUENTIAL PROMPTS:
+//// //1.*  8-128 characters (<if> loop; >= 8 && <= 128) >>> sting input (NOT ===)
+//// //2.*  lowercase?    -\
+//// //3.*  uppercase?    -| >>> yes/no prompts
+//// //4.*  numbers?      -| >>> (maybe use radio button?)
+//// //5.*  symbols?      -|
+//// //6.**  final conf..  -/
+//
+//// * confirm selection after each prompt is answered
+// // CODE:
+// //// window.display("You have selected " + [selection] + " would you like to keep this selection?")
+// //// <if> ([input] === true), continue to next prompt/loop
+// //// <else> restart previous loop
+//
+//// ** final confirmation: list selections to previous prompts
+// // CODE:
+// //// window.display("You have selected " + [<ul> displaying selections] " are you happy with your criteria?"
+// //// <if> ([input] === true) {gereate/display password}
+// //// <else> {restart from character quantity selection (1st loop)}
+//
+// generate pw & display to complete
 
 // NOTES:
 //// create variables first...
 ///// 4 yes/no inputs; 1 string input
 //// how should I structure my <for> loop?
 //// look up how to generate/put together strings of responses
-//// what vars do I need? how many?
-
+//// çreate variables
+////// vars -
+// //////(1) passwordLength;
+// //////(2) lowecase;
+// //////(3) upShift(lowecase) || uppercase
+// ////// ////// >>try upsShift(lowercase) for var; if not possible, var uppercase<<
+// //////(4) numbers;
+// //////(5) symbols...
+//
+//// create character sets as constants (?)...
+////// consts -
+// //////(5) letters
+//
 // FINAL NOTE: YOU GOT THIS! KEEP YOUR HEAD UP!!!
+//
+//
+//
+//
+
+// CODE
+// CODE
+// CODE
+
+// const letters = "abcdefghijklmnopqrstuvwxyz";
+// const numbers = 0-9;
+// const specialChars = "`~!@#$%^&*-_=+"
+
+// var passwordLength = ;
+// var lowercase = letters;
+// var uppercase = (???) upShift(letters)
