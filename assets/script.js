@@ -13,7 +13,7 @@
 
 // // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
-console.log(window);
+
 // END ASSIGNMENT SOURCE CODE
 
 //
@@ -90,40 +90,50 @@ var lengthPrompt = prompt(
 );
 // var lengthConf = "You have selected " +
 
-function showConfirm() {
-  if (lengthPrompt > 128 || lengthPrompt < 8) {
-    this.alert(
-      "Oops! " +
-        lengthPrompt +
-        " character(s) is not within the specified range; please select a number from 8-128 for your password character-length."
-    );
-    document.return(lengthPrompt);
-  } else {
-    alert(
-      "You have chosen " +
-        lengthPrompt +
-        " characters for your password length."
-    );
-  }
+if (lengthPrompt > 128 || lengthPrompt < 8) {
+  alert(
+    "Oops! " +
+      lengthPrompt +
+      " character(s) is not within the specified range; please select a number from 8-128 for your password character-length."
+  );
+} else {
+  alert(
+    "You have chosen " + lengthPrompt + " characters for your password length."
+  );
 }
 
 var lowLetterPrompt = confirm(
   "Would you like your password to include lowercase letters?"
 );
 if (lowLetterPrompt === true) {
-  // INCLUDE LOWERCASE LETTERS
+  alert("You have chosen to inlcude lowercase letters.");
 } else {
-  // DO NOT LOWERCASE LETTERS
+  alert("You have chosen not to inlcude lowercase letters.");
 }
 
 var upLetterPrompt = confirm(
   "Would you like your password to include uppercase letters?"
 );
+if (lowLetterPrompt === true) {
+  alert("You have chosen to inlcude uppercase letters.");
+} else {
+  alert("You have chosen not to inlcude uppercase letters.");
+}
 
 var numberPrompt = confirm("Would you like your password to include numbers?");
+if (lowLetterPrompt === true) {
+  alert("You have chosen to inlcude numbers.");
+} else {
+  alert("You have chosen not to inlcude numbers.");
+}
 
 var specCharPrompt = confirm(
   "Would you like your password to include special characters?"
 );
+if (lowLetterPrompt === true) {
+  alert("You have chosen to inlcude special characters.");
+} else {
+  alert("You have chosen not to inlcude special characters.");
+}
 
 // slice(Math.floor(Math.random)) *
