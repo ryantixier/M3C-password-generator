@@ -1,18 +1,18 @@
 // Assignment code here
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-}
+//   passwordText.value = password;
+// }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
 
 // PSEUDOCODE
 
@@ -22,7 +22,7 @@ generateBtn.addEventListener("click", writePassword);
 //// //3.*  uppercase?    -| >>> yes/no prompts
 //// //4.*  numbers?      -| >>> (maybe use radio button?)
 //// //5.*  symbols?      -|
-//// //6.**  final conf..  -/
+//// //6.**  final conf   -/
 //
 //// * confirm selection after each prompt is answered
 // // CODE:
@@ -54,7 +54,9 @@ generateBtn.addEventListener("click", writePassword);
 //
 //// create character sets as constants (?)...
 ////// consts -
-// //////(5) letters
+// //////(1) letters (range)
+// //////(2) numbers (range)
+// //////(3) specialChars (just do top of keyboard)
 //
 // FINAL NOTE: YOU GOT THIS! KEEP YOUR HEAD UP!!!
 //
@@ -66,10 +68,30 @@ generateBtn.addEventListener("click", writePassword);
 // CODE
 // CODE
 
-// const letters = "abcdefghijklmnopqrstuvwxyz";
-// const numbers = 0-9;
-// const specialChars = "`~!@#$%^&*-_=+"
+const letters = "abcdefghijklmnopqrstuvwxyz";
+const numberRange = "0123456789";
+const specialChars = "~!%^&*-=+";
+
+var lowercase = Array.from(letters);
+// console.log(lowercase); turns letters const into a string
+var uppercase = Array.from(letters.toUpperCase());
+// console.log(uppercase); capitalizes alphabet characters in letters variable
+var number = Array.from(numberRange);
+// console.log(number); turns numberRange const into a string
+var character = Array.from(specialChars);
+// console.log(character); turns specialChars const into a string
+
+//
 
 // var passwordLength = ;
 // var lowercase = letters;
-// var uppercase = (???) upShift(letters)
+// var passwordLength =
+// var lengthChoice =
+
+// slice(Math.floor(Math.random)) *
+
+// if (lengthChoice >= 128 || letters <= 8) {
+//   this.alert(
+//     "Please select a number from 8-128 for your password character length."
+//   );
+// }
