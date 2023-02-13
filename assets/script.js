@@ -1,4 +1,4 @@
-// Assignment code here
+// ASSIGNMENT SOURCE CODE HERE
 
 // Get references to the #generate element
 // var generateBtn = document.querySelector("#generate");
@@ -13,6 +13,10 @@
 
 // // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
+console.log(window);
+// END ASSIGNMENT SOURCE CODE
+
+//
 
 // PSEUDOCODE
 
@@ -81,24 +85,40 @@ var number = Array.from(numberRange);
 var character = Array.from(specialChars);
 // console.log(character); turns specialChars const into a string
 
-var passwordPrompt = prompt(
-  "How many characters would you like in your password? (Choose a number between 8-128)."
+var lengthPrompt = prompt(
+  "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals)."
 );
-var lowLetterPrompt =
-  "Would you like your password to include lowercase letters?";
-var upLetterPrompt =
-  "Would you like your password to include uppercase letters?";
-var numberPrompt = "Would you like your password to include numbers?";
-var specCharPrompt =
-  "Would you like your password to include special characters?";
-
 // var lengthConf = "You have selected " +
 
-if (passwordPrompt > 128 || passwordPrompt < 8) {
-  alert(
-    "Oops! That number is not accepted; please select a number from 8-128 for your password character-length."
+if (lengthPrompt > 128 || lengthPrompt < 8) {
+  this.alert(
+    "Oops! " +
+      lengthPrompt +
+      " characters is not within the specified range; please select a number from 8-128 for your password character-length."
   );
 } else {
+  alert(
+    "You have chosen " + lengthPrompt + " characters for your password length."
+  );
 }
+
+var lowLetterPrompt = confirm(
+  "Would you like your password to include lowercase letters?"
+);
+if (lowLetterPrompt === true) {
+  // INCLUDE LOWERCASE LETTERS
+} else {
+  // DO NOT LOWERCASE LETTERS
+}
+
+var upLetterPrompt = confirm(
+  "Would you like your password to include uppercase letters?"
+);
+
+var numberPrompt = confirm("Would you like your password to include numbers?");
+
+var specCharPrompt = confirm(
+  "Would you like your password to include special characters?"
+);
 
 // slice(Math.floor(Math.random)) *
