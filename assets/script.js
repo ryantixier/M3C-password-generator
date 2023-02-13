@@ -155,28 +155,32 @@ if (specCharPrompt === true) {
 // ];
 
 // randomizes characters selected by the generator
-var passwordLower = [Math.floor(Math.random() * lowercase.length)];
-var passwordUpper = [Math.floor(Math.random() * uppercase.length)];
-var passwordNumber = [Math.floor(Math.random() * number.length)];
-var passwordSpecChar = [Math.floor(Math.random() * character.length)];
-// turns randomized character selecitons into an array
-var randomChar = [lowercase + uppercase + number + character];
+// var passwordLower = [Math.floor(Math.random() * lowercase.length)];
+// var passwordUpper = [Math.floor(Math.random() * uppercase.length)];
+// var passwordNumber = [Math.floor(Math.random() * number.length)];
+// var passwordSpecChar = [Math.floor(Math.random() * character.length)];
+// turns randomized character selections into an array
 
-//
-//
-//
-
+var randomChar = lowercase.concat(uppercase, number, character);
 // console.log(randomChar);
 
+//
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  for (i = 0; i < lengthPrompt.length; i++);
+  var finalPassword = "";
+  for (i = 0; i < parseInt(lengthPrompt); i++);
   {
-    return randomChar[i];
+    var passwordRandom = Math.floor(Math.random() * randomChar.length);
+    finalPassword += randomChar[passwordRandom];
+    // return passwordRandom[i];
+    // return (passwordText[i] = lengthPrompt[randomChar]);
+    // return (randomChar[i] = lengthPrompt[passwordRandom]);
   }
+  return finalPassword;
 }
-console.log(randomChar);
+console.log(finalPassword);
+// console.log(randomChar);
 
 function writePassword() {
   var password = generatePassword();
