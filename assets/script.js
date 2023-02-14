@@ -185,58 +185,41 @@ if (specCharPrompt === true) {
 // PASSWORD GENERATOR //
 ////////////////////////
 
-//
 var generateBtn = document.querySelector("#generate");
+// creates refernce (variable) linked to <button> element id 'generate' in document object
 
+// WORK IN PROGRESS //
 function generatePassword() {
+  // DECLARES FUNCTION generatePassword
   var finalPassword = "";
+  // DECLARES VARIABLE finalPassword AS AN EMPTY STRING
   for (i = 0; i < parseInt(lengthPrompt); i++) {
+    // <for> ([index starting point]; [range]; [increment])
+    // cycles through lengthPrompt string index until # of iterations = lengthPrompt value
+    // parseInt: recalls string value from lengthPrompt and converts it to an integer
     var passwordRandom = Math.floor(Math.random() * randomChar.length);
+    // creates variable to represent randomized
+    // :: Math.random() :: method (?) to randomly select numbers w/in 'Math' object
+    // :: randomChar.length :: numerical; represents full range of randomChar index
+    // :: Math.floor(...*...) :: method (?) to ....{{{idk}}}.... the equation
+    // LOOK INTO THIS MORE - ASK BEN OR JUSTIN
     finalPassword += randomChar[passwordRandom];
-    // return passwordRandom[i];
-    // return (passwordText[i] = lengthPrompt[randomChar]);
-    // return (randomChar[i] = lengthPrompt[passwordRandom]);
+    // LOOK INTO THIS MORE TOO... PLS - ASK BEN OR JUSTIN
   }
   return finalPassword;
+  // OUTPUT VALUE FOR finalPassword
 }
-
-// var finalPassword =
-console.log(finalPassword);
-// console.log(randomChar);
+// console.log(finalPassword); currently (2/13/23, 8:52PM) says finalPassword value is underfined... T.T
 
 function writePassword() {
+  // DECLARES FUNCTION writePassword as a command
   var password = generatePassword();
+  // DECLARES VARIABLE generatePassword as a command
   var passwordText = document.querySelector("#password");
+  // creates refernce (variable) linked to <textarea> element id 'password' in document object
   passwordText.value = password;
+  // provides placeholder text ("password"), disappears when generateBtn is selected
 }
 
-// generatePassword();
-
-// writePassword();
-
 generateBtn.addEventListener("click", writePassword);
-
-//
-
-//
-
-//
-
-// CODE SNIPPETS //
-///////////////////
-
-// MAY NOT NEED, BUT CREATED VAR/ARRAY TO CONSOLIDATE THE STORED VALUES FOR SELECTIONS
-// var selections = [
-//   lengthPrompt,
-//   lowLetterPrompt,
-//   upLetterPrompt,
-//   numberPrompt,
-//   specCharPrompt,
-// ];
-
-// randomizes characters selected by the generator
-// var passwordLower = [Math.floor(Math.random() * lowercase.length)];
-// var passwordUpper = [Math.floor(Math.random() * uppercase.length)];
-// var passwordNumber = [Math.floor(Math.random() * number.length)];
-// var passwordSpecChar = [Math.floor(Math.random() * character.length)];
-// turns randomized character selections into an array
+// creates event listener 'click'; runs writePassword function once "generate" button is clicked
