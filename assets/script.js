@@ -197,10 +197,13 @@ function generatePassword() {
     // <for> ([index starting point]; [range]; [increment])
     // cycles through lengthPrompt string index until # of iterations = lengthPrompt value
     // parseInt: recalls string value from lengthPrompt and converts it to an integer
-    var passwordRandom = Math.floor(Math.random() * randomChar.length);
+    var passwordRandom = Math.floor(
+      Math.random() * parseInt(randomChar.length)
+    );
     // creates variable to represent randomized
     // :: Math.random() :: method (?) to randomly select numbers w/in 'Math' object
-    // :: randomChar.length :: numerical; represents full range of randomChar index
+    // :: parseInt(randomChar.length) :: converts randChar from string to numerical values;
+    //                                :: string items become referenceable by numerical place in array
     // :: Math.floor(...*...) :: method (?) to ....{{{idk}}}.... the equation
     // LOOK INTO THIS MORE - ASK BEN OR JUSTIN
     finalPassword += randomChar[passwordRandom];
@@ -214,7 +217,7 @@ function generatePassword() {
 function writePassword() {
   // DECLARES FUNCTION writePassword as a command
   var password = generatePassword();
-  // DECLARES VARIABLE generatePassword as a command
+  // DECLARES VARIABLE password; when called, will run generatePassword function above
   var passwordText = document.querySelector("#password");
   // creates refernce (variable) linked to <textarea> element id 'password' in document object
   passwordText.value = password;
