@@ -92,7 +92,8 @@ var character = Array.from(specialChars);
 // console.log(character); turns specialChars const into an array
 var randomChar = lowercase.concat(uppercase, number, character);
 // console.log(randomChar); concatenates var arrays into single array, stored as string
-
+//
+// ADJUST randomChar TO ONLY INCLUDE APPROVED VALUES
 //
 
 // WINDOW PROMPTS  //
