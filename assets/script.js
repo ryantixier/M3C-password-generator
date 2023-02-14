@@ -1,3 +1,4 @@
+//
 // ASSIGNMENT SOURCE CODE HERE
 
 // Get references to the #generate element
@@ -15,10 +16,10 @@
 // generateBtn.addEventListener("click", writePassword);
 
 // END ASSIGNMENT SOURCE CODE
-
 //
 
-// PSEUDOCODE
+// PSEUDOCODE //
+////////////////
 
 //// PROCESS - VISIT URL... SEQUENTIAL PROMPTS:
 //// //1.*  8-128 characters (<if> loop; >= 8 && <= 128) >>> sting input (NOT ===)
@@ -68,32 +69,46 @@
 //
 //
 
-// CODE
-// CODE
-// CODE
+// // // BEGIN CODE // // //
 
+// INDECES //
+/////////////
+
+// DECLARING CONSTANTS: CHARACTER INDEX //
 const letters = "abcdefghijklmnopqrstuvwxyz";
 const numberRange = "0123456789";
 const specialChars = "~!%^&*-=+";
 
+// CREATING VAR ARRAYS TO SEPARATE CHARACTERS WITHIN CHARACTER CONSTANTS ABOVE
 var lowercase = Array.from(letters);
-// console.log(lowercase); turns letters const into a string
+// console.log(lowercase);
+// lowercase array, turns 'letters' const into an array
 var uppercase = Array.from(letters.toUpperCase());
-// console.log(uppercase); capitalizes alphabet characters in letters variable
+// console.log(uppercase);
+// uppercase array, turns 'letters' const into an array w capital letters
 var number = Array.from(numberRange);
-// console.log(number); turns numberRange const into a string
+// console.log(number); turns numberRange const into an array
 var character = Array.from(specialChars);
-// console.log(character); turns specialChars const into a string
+// console.log(character); turns specialChars const into an array
+var randomChar = lowercase.concat(uppercase, number, character);
+// console.log(randomChar); concatenates var arrays into single array, stored as string
+
+//
+
+// WINDOW PROMPTS  //
+/////////////////////
 
 alert(
   "¡Bienvenidos! I'm here to generate a password for you; you'll be asked a series of questions, and then my robo-brain will spin some wheels to get you a solid password. Let's get started!"
 );
+// introductory window
 
 var lengthPrompt = prompt(
   "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals)."
 );
+// lengthPrompt: stores value for user's desired password length
+// requires numerical input, but stored in var as a string
 
-// NEED A FUNCTION TO RETURN TO lengthPrompt
 while (lengthPrompt > 128 || lengthPrompt < 8) {
   alert(
     "Oops! " +
@@ -104,46 +119,111 @@ while (lengthPrompt > 128 || lengthPrompt < 8) {
     "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals."
   );
 }
+// Incorporated condition <while> loop for lengthPrompt,
+// user loops back to prompt if input is invalid
+// code progresses once condition is met
 
 alert(
   "You have chosen " + lengthPrompt + " characters for your password length."
 );
+// validates user input
 
 var lowLetterPrompt = confirm(
   "Would you like your password to include lowercase letters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
+// lowLetterPrompt: stores value for user's lowercase preferences
+// boolean
+
 if (lowLetterPrompt === true) {
   alert("You have chosen to inlcude lowercase letters.");
 } else {
   alert("You have chosen to exclude lowercase letters.");
 }
+// validates according to user input's condition
 
 var upLetterPrompt = confirm(
   "Would you like your password to include uppercase letters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
+// upLetterPrompt: stores value for user's uppercase preferences
+// boolean
+
 if (upLetterPrompt === true) {
   alert("You have chosen to inlcude uppercase letters.");
 } else {
   alert("You have chosen to exclude uppercase letters.");
 }
+// validates according to user input's condition
 
 var numberPrompt = confirm(
   "Would you like your password to include numbers? Hit 'okay' to include; hit 'cancel' to exclude."
 );
+// numberPrompt: stores value for user's number preferences
+// boolean
+
 if (numberPrompt === true) {
   alert("You have chosen to inlcude numbers.");
 } else {
   alert("You have chosen to exclude numbers.");
 }
+// validates according to user input's condition
 
 var specCharPrompt = confirm(
   "Would you like your password to include special characters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
+// specCharPrompt: stores value for user's special character preferences
+// boolean
+
 if (specCharPrompt === true) {
   alert("You have chosen to inlcude special characters.");
 } else {
   alert("You have chosen to exclude special characters.");
 }
+// upLetterPrompt: stores value for user's uppercase preferences
+
+//
+
+// PASSWORD GENERATOR //
+////////////////////////
+
+//
+var generateBtn = document.querySelector("#generate");
+
+function generatePassword() {
+  var finalPassword = "";
+  for (i = 0; i < parseInt(lengthPrompt); i++) {
+    var passwordRandom = Math.floor(Math.random() * randomChar.length);
+    finalPassword += randomChar[passwordRandom];
+    // return passwordRandom[i];
+    // return (passwordText[i] = lengthPrompt[randomChar]);
+    // return (randomChar[i] = lengthPrompt[passwordRandom]);
+  }
+  return finalPassword;
+}
+
+// var finalPassword =
+console.log(finalPassword);
+// console.log(randomChar);
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+
+// generatePassword();
+
+// writePassword();
+
+generateBtn.addEventListener("click", writePassword);
+
+//
+
+//
+
+//
+
+// CODE SNIPPETS //
+///////////////////
 
 // MAY NOT NEED, BUT CREATED VAR/ARRAY TO CONSOLIDATE THE STORED VALUES FOR SELECTIONS
 // var selections = [
@@ -160,36 +240,3 @@ if (specCharPrompt === true) {
 // var passwordNumber = [Math.floor(Math.random() * number.length)];
 // var passwordSpecChar = [Math.floor(Math.random() * character.length)];
 // turns randomized character selections into an array
-
-var randomChar = lowercase.concat(uppercase, number, character);
-// console.log(randomChar);
-
-//
-var generateBtn = document.querySelector("#generate");
-
-function generatePassword() {
-  var finalPassword = "";
-  for (i = 0; i < parseInt(lengthPrompt); i++);
-  {
-    var passwordRandom = Math.floor(Math.random() * randomChar.length);
-    finalPassword += randomChar[passwordRandom];
-    // return passwordRandom[i];
-    // return (passwordText[i] = lengthPrompt[randomChar]);
-    // return (randomChar[i] = lengthPrompt[passwordRandom]);
-  }
-  return finalPassword;
-}
-console.log(finalPassword);
-// console.log(randomChar);
-
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-}
-
-// generatePassword();
-
-// writePassword();
-
-generateBtn.addEventListener("click", writePassword);
