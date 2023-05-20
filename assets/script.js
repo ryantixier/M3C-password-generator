@@ -124,8 +124,8 @@ var generatePassword = function () {
     );
     writePassword();
   } else {
-    // GENERATE PASSWORD
-    // GENERATE PASSWORD
+    // CALCULATE PASSWORD
+    // CALCULATE PASSWORD
 
     var password = "";
     var randomChar = lowercase.concat(uppercase, number, character);

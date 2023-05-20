@@ -1,41 +1,28 @@
-# M3C-password-generator
+# M3C Random Password Generator
 
-Repo for Module 3 Challenge assignment (DU Full-Stack Bootcamp).
+## Description
 
-## User Story
+The aim of the project was to create a random password generator to be utilized by employees who have sensitive data; the employees' data will be more secure if it is protected by a password that cannot be reasonably guess. The process has been a good learning experience in terms of learning the workflow of JavaScript. Developing the generator also offered good rehearsal of the content learned the third module of the University of Denver Full-Stack Coding Boot Camp.
 
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+Website: https://ryantixier.github.io/M3C-password-generator/
 
-## Acceptance Criteria
+## Installation
 
-GIVEN I need a new, secure password...
+N/A
 
-. WHEN I click the button to generate a password
-<br>
-.. THEN I am presented with a series of prompts for password criteria
+## Usage
 
-. WHEN prompted for password criteria
-<br>
-.. THEN I select which criteria to include in the password
+To use this tool, click on the red "Generate Password" button. You will be taken through a series of prompts: you will be requested to input the desired length of your password; you will also be prompted to specify which character criteria you would like to include (options: upper-/lowercase letters, numbers, and special characters). When all input selections are recorded, a random password that meets your specified criteria will appear in the box, replacing the "Your Secure Password" placeholder text.
 
-. WHEN prompted for the length of the password
-<br>
-.. THEN I choose a length of at least 8 characters and no more than 128 characters
+### Snapshot:
 
-. WHEN asked for character types to include in the password
-<br>
-.. THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+![Screenshot of Password Generator Page](./assets/M3C-password-generator-mock-up.png)
 
-. WHEN I answer each prompt
-<br>
-.. THEN my input should be validated and at least one character type should be selected
+## Credits
 
-. WHEN all prompts are answered
-<br>
-.. THEN a password is generated that matches the selected criteria
+Starter code was cloned from a public GitHub repository* and mirrored to mine.
+*Source: https://github.com/coding-boot-camp/friendly-parakeet
 
-. WHEN the password is generated
-<br>
-.. THEN the password is either displayed in an alert or written to the page
+## License
+
+N/A
