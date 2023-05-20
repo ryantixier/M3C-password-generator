@@ -12,15 +12,13 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+// INTRODUCTION
+// INTRODUCTION
+alert(
+  "¡Bienvenidos! I'm here to generate a password for you; to get started, click on the red, 'Generate Password' button - you'll be asked a series of questions, and then my robo-brain will spin some wheels (beep-boop) to get you a solid password. Let's get started!"
+);
 
 var generatePassword = function () {
-  // INTRODUCTION
-  // INTRODUCTION
-
-  alert(
-    "¡Bienvenidos! I'm here to generate a password for you; you'll be asked a series of questions, and then my robo-brain will spin some wheels (beep-boop) to get you a solid password. Let's get started!"
-  );
-
   // PASSWORD LENGTH
   // PASSWORD LENGTH
 
