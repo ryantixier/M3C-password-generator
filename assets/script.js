@@ -1,115 +1,31 @@
-//
-// ASSIGNMENT SOURCE CODE HERE
-
-// Get references to the #generate element
-// var generateBtn = document.querySelector("#generate");
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-// END ASSIGNMENT SOURCE CODE
-//
-
-// PSEUDOCODE //
-////////////////
-
-//// PROCESS - VISIT URL... SEQUENTIAL PROMPTS:
-//// //1.*  8-128 characters (<if> loop; >= 8 && <= 128) >>> sting input (NOT ===)
-//// //2.*  lowercase?    -\
-//// //3.*  uppercase?    -| >>> yes/no prompts
-//// //4.*  numbers?      -| >>> (maybe use radio button?)
-//// //5.*  symbols?      -|
-//// //6.**  final conf   -/
-//
-//// * confirm selection after each prompt is answered
-// // CODE:
-// //// window.display("You have selected " + [selection] + " would you like to keep this selection?")
-// //// <if> ([input] === true), continue to next prompt/loop
-// //// <else> restart previous loop
-//
-//// ** final confirmation: list selections to previous prompts
-// // CODE:
-// //// window.display("You have selected " + [<ul> displaying selections] " are you happy with your criteria?"
-// //// <if> ([input] === true) {gereate/display password}
-// //// <else> {restart from character quantity selection (1st loop)}
-//
-// generate pw & display to complete
-
-// NOTES:
-//// create variables/keys (constants) first...
-///// 4 true/false inputs; 1 string input
-//// how should I structure my <for> loop?
-//// look up how to generate/put together strings of responses
-//// çreate variables
-////// vars -
-// //////(1) passwordLength;
-// //////(2) lowecase;
-// //////(3) upShift(lowecase) || uppercase
-// ////// ////// >>try upsShift(lowercase) for var; if not possible, var uppercase<<
-// //////(4) numbers;
-// //////(5) symbols...
-//
-//// create character sets as constants (?)...
-////// consts -
-// //////(1) letters (range)
-// //////(2) numbers (range)
-// //////(3) specialChars (just do top of keyboard)
-//
-// FINAL NOTE: YOU GOT THIS! KEEP YOUR HEAD UP!!!
-//
-//
-//
-//
-
-// // // BEGIN CODE // // //
-
-// INDECES //
-/////////////
-
-// DECLARING CONSTANTS: CHARACTER INDEX //
+// KEY(S) ✅
+// KEY(S) ✅
 const letters = "abcdefghijklmnopqrstuvwxyz";
 const numberRange = "0123456789";
-const specialChars = "~!%^&*-=+";
+const specialCharacters = "~!%^&*-=+";
 
-// CREATING VAR ARRAYS TO SEPARATE CHARACTERS WITHIN CHARACTER CONSTANTS ABOVE
 var lowercase = Array.from(letters);
-// console.log(lowercase);
-// lowercase array, turns 'letters' const into an array
 var uppercase = Array.from(letters.toUpperCase());
-// console.log(uppercase);
-// uppercase array, turns 'letters' const into an array w capital letters
 var number = Array.from(numberRange);
-// console.log(number); turns numberRange const into an array
-var character = Array.from(specialChars);
-// console.log(character); turns specialChars const into an array
-
+var character = Array.from(specialCharacters);
 var randomChar = lowercase.concat(uppercase, number, character);
-// console.log(randomChar); concatenates var arrays into single array, stored as string
-//
-// ADJUST randomChar TO ONLY INCLUDE APPROVED VALUES
-//
 
-// WINDOW PROMPTS  //
-/////////////////////
-
+// INTRODUCTION ✅
+// INTRODUCTION ✅
 alert(
   "¡Bienvenidos! I'm here to generate a password for you; you'll be asked a series of questions, and then my robo-brain will spin some wheels to get you a solid password. Let's get started!"
 );
-// introductory window
 
+//
+//
+
+// PASSWORD LENGTH ✅
+// PASSWORD LENGTH ✅
+
+// PROMPT ✅
 var lengthPrompt = prompt(
   "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals)."
 );
-// lengthPrompt: stores value for user's desired password length
-// requires numerical input, but stored in var as a string
 
 while (lengthPrompt > 128 || lengthPrompt < 8) {
   alert(
@@ -121,39 +37,120 @@ while (lengthPrompt > 128 || lengthPrompt < 8) {
     "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals."
   );
 }
-// Incorporated condition <while> loop for lengthPrompt,
-// user loops back to prompt if input is invalid
-// code progresses once condition is met
-
+// CONFIRMATION ✅
 alert(
   "You have chosen " + lengthPrompt + " characters for your password length."
 );
-// validates user input
 
+//
+//
+
+// INCLUDE LOWERCASE?
+// INCLUDE LOWERCASE?
+
+// PROMPT
 var lowLetterPrompt = confirm(
   "Would you like your password to include lowercase letters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
-// lowLetterPrompt: stores value for user's lowercase preferences
-// boolean
 
+// CONFIRMATION
 if (lowLetterPrompt === true) {
   alert("You have chosen to inlcude lowercase letters.");
+  lowercase;
 } else {
   alert("You have chosen to exclude lowercase letters.");
+  lowercase = "";
 }
-// validates according to user input's condition
 
+//
+//
+
+// INCLUDE UPPERCASE?
+// INLCUDE UPPERCASE?
+
+// PROMPT
 var upLetterPrompt = confirm(
   "Would you like your password to include uppercase letters? Hit 'okay' to include; hit 'cancel' to exclude."
 );
-// upLetterPrompt: stores value for user's uppercase preferences
-// boolean
 
+// CONFIRMATION
 if (upLetterPrompt === true) {
   alert("You have chosen to inlcude uppercase letters.");
+  uppercase;
 } else {
   alert("You have chosen to exclude uppercase letters.");
+  uppercase = "";
 }
+
+//
+//
+
+// INCLUDE NUMBERS?
+// INCLUDE NUMBERS?
+
+// PROMPT
+
+// CONFIRMATION
+
+//
+//
+
+// INCLUDE SPECIAL CHARACTERS?
+// INLCUDE SPECIAL CHARACTERS?
+
+// PROMPT
+
+// CONFIRMATION
+
+//
+//
+
+// VALIDATE SELECTIONS
+// VALIDATE SELECTIONS
+
+//
+//
+
+// GENERATE PASSWORD
+// GERATE PASSWORD
+
+var generateBtn = document.querySelector("#generate");
+
+function generatePassword() {
+  var password = "";
+  for (i = 0; i < parseInt(lengthPrompt); i++) {
+    var passwordRandom = Math.floor(
+      Math.random() * parseInt(randomChar.length)
+    );
+    password += randomChar[passwordRandom]; // ???
+  }
+  return password;
+}
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+
+generateBtn.addEventListener("click", writePassword);
+
+//
+//
+//
+//
+
+// var upLetterPrompt = confirm(
+//   "Would you like your password to include uppercase letters? Hit 'okay' to include; hit 'cancel' to exclude."
+// );
+// // upLetterPrompt: stores value for user's uppercase preferences
+// // boolean
+
+// if (upLetterPrompt === true) {
+//   alert("You have chosen to inlcude uppercase letters.");
+// } else {
+//   alert("You have chosen to exclude uppercase letters.");
+// }
 // validates according to user input's condition
 
 var numberPrompt = confirm(
@@ -180,12 +177,6 @@ if (specCharPrompt === true) {
 } else {
   alert("You have chosen to exclude special characters.");
 }
-// upLetterPrompt: stores value for user's uppercase preferences
-
-//
-
-// PASSWORD GENERATOR //
-////////////////////////
 
 var generateBtn = document.querySelector("#generate");
 // creates refernce (variable) linked to <button> element id 'generate' in document object
