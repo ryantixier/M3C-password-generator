@@ -12,7 +12,7 @@ N/A
 
 ## Usage
 
-To use this tool, click on the red "Generate Password" button. You will be taken through a series of prompts: you will be requested to input the desired length of your password; you will also be prompted to specify which character criteria you would like to include (options: upper-/lowercase letters, numbers, and special characters). When all input selections are recorded, a random password that meets your specified criteria will appear in the box, replacing the "Your Secure Password" placeholder text.
+To use this tool, click on the red, "Generate Password" button. You will be taken through a series of prompts: you will be requested to input the desired length of your password; you will also be prompted to specify which character criteria you would like to include (options: upper-/lowercase letters, numbers, and special characters). When all input selections are recorded, a random password that meets your specified criteria will appear in the box, replacing the "Your Secure Password" placeholder text.
 
 ### Snapshot:
 
