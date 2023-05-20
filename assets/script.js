@@ -18,7 +18,7 @@ var generatePassword = function () {
   // INTRODUCTION
 
   alert(
-    "¡Bienvenidos! I'm here to generate a password for you; you'll be asked a series of questions, and then my robo-brain will spin some wheels to get you a solid password. Let's get started!"
+    "¡Bienvenidos! I'm here to generate a password for you; you'll be asked a series of questions, and then my robo-brain will spin some wheels (beep-boop) to get you a solid password. Let's get started!"
   );
 
   // PASSWORD LENGTH
