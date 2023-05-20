@@ -1,5 +1,8 @@
-// VARIABLES/INDECES
+// EVENT LISTENER/QUERY SELECTION
+var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", writePassword);
 
+// VARIABLES/INDECES
 var letters = "abcdefghijklmnopqrstuvwxyz";
 var numberRange = "0123456789";
 var specialCharacters = "~!%^&*-=+";
@@ -9,9 +12,6 @@ var specialCharacters = "~!%^&*-=+";
 alert(
   "¡Bienvenidos! I'm here to generate a password for you; you'll be asked a series of questions, and then my robo-brain will spin some wheels to get you a solid password. Let's get started!"
 );
-
-//
-//
 
 // PASSWORD LENGTH
 // PASSWORD LENGTH
@@ -36,9 +36,6 @@ alert(
   "You have chosen " + lengthPrompt + " characters for your password length."
 );
 
-//
-//
-
 // INCLUDE LOWERCASE?
 // INCLUDE LOWERCASE?
 
@@ -55,9 +52,6 @@ if (lowLetterPrompt === true) {
   alert("You have chosen to exclude lowercase letters.");
   var lowercase = "";
 }
-
-//
-//
 
 // INCLUDE UPPERCASE?
 // INLCUDE UPPERCASE?
@@ -76,9 +70,6 @@ if (upLetterPrompt === true) {
   var uppercase = "";
 }
 
-//
-//
-
 // INCLUDE NUMBERS?
 // INCLUDE NUMBERS?
 
@@ -95,9 +86,6 @@ if (numberPrompt === true) {
   alert("You have chosen to exclude numbers.");
   var number = "";
 }
-
-//
-//
 
 // INCLUDE SPECIAL CHARACTERS?
 // INLCUDE SPECIAL CHARACTERS?
@@ -116,13 +104,8 @@ if (specCharPrompt === true) {
   var character = "";
 }
 
-//
-//
-
 // GENERATE PASSWORD
 // GERATE PASSWORD
-
-var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   var password = "";
@@ -141,5 +124,3 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-
-generateBtn.addEventListener("click", writePassword);
