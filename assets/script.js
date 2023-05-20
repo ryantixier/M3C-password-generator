@@ -7,9 +7,6 @@ var letters = "abcdefghijklmnopqrstuvwxyz";
 var numberRange = "0123456789";
 var specialCharacters = "~!%^&*-=+";
 
-// INTRODUCTION
-// INTRODUCTION
-
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -17,6 +14,9 @@ function writePassword() {
 }
 
 var generatePassword = function () {
+  // INTRODUCTION
+  // INTRODUCTION
+
   alert(
     "¡Bienvenidos! I'm here to generate a password for you; you'll be asked a series of questions, and then my robo-brain will spin some wheels to get you a solid password. Let's get started!"
   );
@@ -26,14 +26,14 @@ var generatePassword = function () {
 
   // PROMPT
   var lengthPrompt = prompt(
-    "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals)."
+    "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals.)"
   );
 
   while (lengthPrompt > 128 || lengthPrompt < 8) {
     alert(
-      "Oops! " +
+      "Oops! Your input ('" +
         lengthPrompt +
-        " character(s) is not within the specified range; please select a number from 8-128 for your password character-length."
+        "') is not within the specified range; please select a number from 8-128 for your password character-length."
     );
     lengthPrompt = prompt(
       "How many characters would you like in your password? (Choose a number between 8-128; whole numbers only - no decimals."
@@ -112,9 +112,21 @@ var generatePassword = function () {
     var character = "";
   }
 
-  // GENERATE PASSWORD
-  // GENERATE PASSWORD
-  {
+  // ISSUE: NO CRITERION SELECTED...
+  if (
+    lowLetterPrompt === false &&
+    upLetterPrompt === false &&
+    numberPrompt === false &&
+    specCharPrompt === false
+  ) {
+    alert(
+      "Ruh Roh! You must select at least one criterion to include in your password. Please try again - you will be redirected to the first prompt."
+    );
+    writePassword();
+  } else {
+    // GENERATE PASSWORD
+    // GENERATE PASSWORD
+
     var password = "";
     var randomChar = lowercase.concat(uppercase, number, character);
     for (i = 0; i < parseInt(lengthPrompt); i++) {
