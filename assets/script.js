@@ -90,6 +90,7 @@ var number = Array.from(numberRange);
 // console.log(number); turns numberRange const into an array
 var character = Array.from(specialChars);
 // console.log(character); turns specialChars const into an array
+
 var randomChar = lowercase.concat(uppercase, number, character);
 // console.log(randomChar); concatenates var arrays into single array, stored as string
 //
