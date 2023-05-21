@@ -127,13 +127,12 @@ var generatePassword = function () {
     // CALCULATE PASSWORD
 
     var password = "";
-    var randomChar = lowercase.concat(uppercase, number, character);
+    var charKey = [...lowercase, ...uppercase, ...number, ...character];
     for (i = 0; i < parseInt(lengthPrompt); i++) {
-      var passwordRandom = Math.floor(
-        Math.random() * parseInt(randomChar.length)
-      );
-      password += randomChar[passwordRandom];
+      var passwordRandom = Math.floor(Math.random() * parseInt(charKey.length));
+      password += charKey[passwordRandom];
     }
+    console.log(charKey);
     return password;
   }
 };
