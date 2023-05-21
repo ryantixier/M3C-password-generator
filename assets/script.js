@@ -132,7 +132,6 @@ var generatePassword = function () {
       var passwordRandom = Math.floor(Math.random() * parseInt(charKey.length));
       password += charKey[passwordRandom];
     }
-    console.log(charKey);
     return password;
   }
 };
